@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="30dp" >
+
+      <Spinner
+          android:id="@+id/day_select"
+          android:layout_width="400dp"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          
+          android:layout_alignParentTop="true"
+          android:entries="@array/list_days"
+          android:prompt="@string/s_day" />
+
+      <TextView
+          android:id="@+id/f_time_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/btime"
+          android:layout_alignBottom="@+id/btime"
+          android:layout_marginLeft="18dp"
+          android:textSize="20sp"
+          android:hint="@string/nothing_here" />
+
+      <Button
+          android:id="@+id/b_t_time"
+          android:layout_width="250dp"
+          android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/btime"
+          android:layout_marginRight="20dp"
+          android:layout_below="@+id/btime"
+          android:layout_marginTop="44dp"
+          android:text="@string/s_t_time" />
+
+      <TextView
+          android:id="@+id/t_time_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/b_t_time"
+          android:layout_alignBottom="@+id/b_t_time"
+          android:layout_alignLeft="@+id/f_time_text"
+          android:textSize="20sp"
+          android:hint="@string/nothing_here" />
+
+      <Button
+          android:id="@+id/btime"
+          android:layout_width="150dp"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_below="@+id/day_select"
+          android:layout_marginRight="18dp"
+          android:layout_marginTop="27dp"
+          android:text="@string/s_f_time" />
+
+      <Button
+          android:id="@+id/s_task"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/b_t_time"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="36dp"
+          android:text="@string/s_t" />
+
+</RelativeLayout>

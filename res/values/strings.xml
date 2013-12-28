@@ -4,5 +4,23 @@
     <string name="app_name">Ringer Scheduler</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="view_schedule">View schedule</string>
+    <string name="create_alarm">Create Alarm</string>
+    <string-array name="list_days">
+        <item >Sunday</item>
+        <item >Monday</item>
+        <item >Tuesday</item>
+        <item >Wednesday</item>
+        <item >Thursday</item>
+        <item >Friday</item>
+        <item >Saturday</item>
+    </string-array>
+    <string name="s_f_time">Set From Time</string>
+    <string name="s_t_time">Set To Time</string>
+    <string name="s_day">Select Day</string>
+    <string name="s_t">SET</string>
+    <string name="remove">Remove</string>
+    <string name="nothing_here">Set Time</string>
+    <string name="create_schedule">Create schedule</string>
 
 </resources>
