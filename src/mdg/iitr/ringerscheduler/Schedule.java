@@ -19,14 +19,15 @@ public class Schedule extends Activity {
 		
     add = (ImageButton) findViewById(R.id.action_settings);
     
-    add.setOnClickListener(new View.OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			// TODO Auto-generated method stub
-		Intent i = new Intent(getApplicationContext(), Create.class);
-		startActivity(i);
-		}
-	});
+//    add.setOnClickListener(new View.OnClickListener() {
+//		
+//		@Override
+//		public void onClick(View v) {
+//			// TODO Auto-generated method stub
+//		//Intent i = new Intent(getApplicationContext(), Create.class);
+//		//startActivity(i);
+//		}
+//	});
+//	}
 	}
 }
