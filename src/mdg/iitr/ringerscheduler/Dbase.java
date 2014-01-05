@@ -1,7 +1,11 @@
 package mdg.iitr.ringerscheduler;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -58,5 +62,28 @@ public class Dbase extends SQLiteOpenHelper {
 		database.delete(table_name, "ID = ?", ids);
 		database.close();
 	}
+	
+	public List<String> get_list(){
+		List<String> all_data = new ArrayList<String>();
+		String sl = "SELECT * FROM "+ table_name;
+		
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor cs = db.rawQuery(sl, null);
+		Globals.cursor = cs;
+		
+		if(cs.moveToFirst()){
+			do{
+				String s = new String();
+				s += cs.getString(1); 
+				
+				all_data.add(s);
+			}while(cs.moveToNext());
+		}
+		
+		return all_data;
+		
+	}
+	
+	
 	
 }

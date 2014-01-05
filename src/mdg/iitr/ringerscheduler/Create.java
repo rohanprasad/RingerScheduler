@@ -16,6 +16,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -34,11 +35,18 @@ public class Create extends Activity {
 	private int sday;
 	static final int idForTime = 992;
 	static final int idFortTime = 991;
+	private boolean sft;
+	private boolean stt;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.create_layout);
+		
+		sft = false;
+		stt = false;
 		
 		Spinner day_s = (Spinner) findViewById(R.id.day_select);
 		Button b_time = (Button) findViewById (R.id.btime);
@@ -69,6 +77,7 @@ public class Create extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				sft = true;
 				final Calendar cal = Calendar.getInstance();
 				fhour = cal.get(Calendar.HOUR_OF_DAY);
 				fmin = cal.get(Calendar.MINUTE);
@@ -81,6 +90,7 @@ public class Create extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				stt = true;
 				final Calendar cal = Calendar.getInstance();
 				thour = cal.get(Calendar.HOUR_OF_DAY);
 				tmin = cal.get(Calendar.MINUTE);
@@ -93,8 +103,10 @@ public class Create extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
+				if(sft && stt)
 				c_schedule();
+				else
+					Toast.makeText(getApplicationContext(), "Set Time", Toast.LENGTH_SHORT).show();
 			}
 		});
 		
