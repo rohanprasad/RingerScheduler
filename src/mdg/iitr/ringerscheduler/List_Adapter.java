@@ -36,9 +36,9 @@ public class List_Adapter extends ArrayAdapter<String> {
 		
 		try{
 		String temp = Description.get(position);
-		String temp1 = temp;
-		String temp2 = temp.substring(4);
-		time_t.setText(temp1);
+		String temp1 = temp.substring(0, temp.indexOf("||"));
+		String temp2 = temp.substring(temp.indexOf("||")+2);
+		time_t.setText(temp2);
 		day_t.setText(temp1);
 		}
 		catch(Exception e)

@@ -64,6 +64,7 @@ public class Dbase extends SQLiteOpenHelper {
 	}
 	
 	public List<String> get_list(){
+		
 		List<String> all_data = new ArrayList<String>();
 		String sl = "SELECT * FROM "+ table_name;
 		

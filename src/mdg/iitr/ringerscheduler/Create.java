@@ -53,7 +53,11 @@ public class Create extends Activity {
 		Button b_t_time = (Button) findViewById (R.id.b_t_time);
 		Button b_set = (Button) findViewById(R.id.s_task);
 		
+		Calendar cal = Calendar.getInstance();
+		int dayOfMonth = cal.get(Calendar.DAY_OF_WEEK) - 1;
+		
 		day_s.setVerticalFadingEdgeEnabled(true);
+		day_s.setSelection(dayOfMonth);
 		day_s.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override
@@ -160,7 +164,7 @@ public class Create extends Activity {
 			public void c_schedule()
 			{
 				
-				if(fhour*60 + fmin > thour*60+tmin)
+				if(fhour*60 + fmin > thour*60+tmin || fhour*60 + fmin == thour*60+tmin )
 				{
 					Toast.makeText(this,"Improper time", Toast.LENGTH_SHORT).show();
 					return;
@@ -215,8 +219,10 @@ public class Create extends Activity {
 				long rem_time = new GregorianCalendar().getTimeInMillis();
 				rem_time = time1 - rem_time;
 				rem_time = rem_time / (100*60);
-				Toast.makeText(this, "ID:"+id, Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, "db id on saving"+id, Toast.LENGTH_SHORT).show();
 				
+				Globals.settin = true;
+				Globals.ids = id;
 				
 				Context cont = getApplicationContext();
 				Scheduler handler = new Scheduler();
